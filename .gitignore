@@ -1,0 +1,32 @@
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio files
+.vs/
+
+# Rider IDE files
+.idea/
+
+# Package folders
+*.nupkg
+*.snupkg
+packages/
+
+# NuGet
+*.nuspec
+*.psmdcp
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
