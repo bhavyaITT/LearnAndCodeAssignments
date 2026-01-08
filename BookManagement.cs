@@ -32,7 +32,7 @@ public class LibraryManagement
 
 public class BookRepository
 {
-    public void Save(Book book)
+    public void save(Book book)
     {
         var fileName = $"{book.Title} - {book.Author}.json";
         var path = Path.Combine("documents", fileName);
@@ -44,12 +44,12 @@ public class BookRepository
 
 public interface Printer
 {
-    void PrintPage(string page);
+    void printPage(string page);
 }
 
 public class PlainTextPrinter : Printer
 {
-    public void PrintPage(string page)
+    public void printPage(string page)
     {
         Console.WriteLine(page);
     }
@@ -57,7 +57,7 @@ public class PlainTextPrinter : Printer
 
 public class HtmlPrinter : IPrinter
 {
-    public void PrintPage(string page)
+    public void printPage(string page)
     {
         Console.WriteLine($"<div class='single-page'>{page}</div>");
     }
