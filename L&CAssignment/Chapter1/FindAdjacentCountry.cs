@@ -19,34 +19,42 @@ class FindAdjacentCountry
 
     public static void Main(string[] args)
     {
+        string? countryCode = TakeUserInput();
+        if (countryCode == null)
+        {
+            return;
+        }
+        string? adjacentCountry = GetAdjacentCountries(countryCode);
+        if(adjacentCountry == null)
+        {
+            Console.WriteLine($"No adjacent countries found for {countryCode}.");
+        }
+        else
+        {
+            PrintAdjacentCountries(countryCode, adjacentCountry);
+        }
+    }
+
+    public static string? TakeUserInput()
+    {
         Console.WriteLine("Please enter a country code: ");
         string? countryCode = Console.ReadLine();
         if (string.IsNullOrEmpty(countryCode))
         {
             Console.WriteLine("Invalid input! Please enter a valid country code.");
-            return;
+            return null;
         }
         countryCode = countryCode.Trim().ToUpper();
-        string? adjacentCountry = GetAdjacentCountries(countryCode);
-        if (adjacentCountry != null)
-        {
-            Console.WriteLine($"Adjacent countries for {countryCode}: {adjacentCountry}");
-        }
-        else
-        {
-            Console.WriteLine($"No adjacent countries found for {countryCode}.");
-        }
+        return countryCode;
     }
 
     public static string? GetAdjacentCountries(string countryCode)
     {
-        foreach (var country in CountriesWithAdjacentCountries)
-        {
-            if (country.Key.Equals(countryCode, StringComparison.OrdinalIgnoreCase))
-            {
-                return country.Value;
-            }
-        }
-        return null;
+        return CountriesWithAdjacentCountries.TryGetValue(countryCode, out var adjacentCountry) ? adjacentCountry : null;
+    }
+
+    public static void PrintAdjacentCountries(string countryCode, string adjacentCountries)
+    {
+        Console.WriteLine($"Adjacent countries for {countryCode}: {adjacentCountries}");
     }
 }
