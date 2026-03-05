@@ -13,6 +13,8 @@ public class OrderProcessor
         _notificationService = notificationService;
     }
 
+    /*This method processes the order by validating the order, checking it's availability, 
+    reserving the items, making payment of order and then sending the confirmation.*/
     public async Task<OrderResult> ProcessOrder(Order order)
     {
         if (order == null)
@@ -71,6 +73,7 @@ public class OrderProcessor
         return order.Items?.Count > 0 && order.TotalAmount > 0;
     }
 
+    // Added for new feature, currently not in use.
     public async Task CancelOrder(string orderId)
     {
 
