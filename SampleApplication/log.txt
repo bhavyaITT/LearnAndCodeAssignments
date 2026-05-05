@@ -1,0 +1,15 @@
+2026-05-05 21:41:57 DataProcessor initialized
+2026-05-05 21:41:57 Reading input file: D:\SampleApplication\input.csv
+2026-05-05 21:41:57 Read 50 lines
+2026-05-05 21:41:57 Parsing data...
+2026-05-05 21:41:57 Validating data...
+2026-05-05 21:41:57 Transforming data...
+2026-05-05 21:41:57 Transformation complete
+2026-05-05 21:41:57 calculating Statics..
+2026-05-05 21:41:58 Calculating statistics...
+2026-05-05 21:41:58 Statistics calculated: 4 metrics
+2026-05-05 21:41:58 Writing output to: D:\SampleApplication\output.csv
+2026-05-05 21:41:58 Output written. 50 records processed
+2026-05-05 21:41:58 JSON export complete
+2026-05-05 21:41:58 XML export complete
+2026-05-05 21:41:58 Filtered 46 records with value >= 100
